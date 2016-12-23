@@ -1,4 +1,4 @@
-export const CHANGE_TYPES = {
+Ôªøexport const CHANGE_TYPES = {
     NEXT: 'next',
     PLAY: 'play',
     PREV: 'prev',
@@ -6,7 +6,7 @@ export const CHANGE_TYPES = {
 };
 
 export const GENRES = [
-    'Œ¢–≈∫√”—',
+    'ÂæÆ‰ø°Â•ΩÂèã',
     'deep',
     'dubstep',
     'house',
