@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import TopMenuContainer from '../containers/TopMenu';
+
+
 const propTypes = {
   dispatch: PropTypes.func.isRequired,
 
@@ -11,22 +14,12 @@ class App extends Component {
     const { dispatch, topmenu } = this.props;
   }
 
-  renderContent() {
-
-  }
-
   render() {
-    const { topmenu } = this.props;
-    var topmenus = [];
-    var topmenuData = topmenu.data; 
-    for (var item of topmenuData) {
-      topmenus.push(<div>{item['name']}</div>);    
-    }
-
     return (
       <div>
-        {topmenus}
-        <topmenu>
+        <div className="songs">
+          <TopMenuContainer />
+        </div>      
       </div>
     );
   }
