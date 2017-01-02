@@ -8,8 +8,14 @@ class TopMenuContainer extends Component {
 		const { topmenu } = this.props;
 		var topmenus = [];
 		var topmenuData = topmenu.data; 
+
 		for (var item of topmenuData) {
-		  topmenus.push(<a className="toolbar-item toolbar-genre">{item['desc']}</a>);    
+
+		  var route = {name:item['name']};
+
+		  topmenus.push(<a className="toolbar-item toolbar-genre" 
+		  	key={item['name']}
+		  	>{item['desc']}</a>);    
 		}
 
        return (

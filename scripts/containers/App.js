@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import TopMenuContainer from '../containers/TopMenu';
+import LeftMenuContainer from '../containers/LeftMenu';
 
 
 const propTypes = {
@@ -20,6 +21,9 @@ class App extends Component {
         <div className="songs">
           <TopMenuContainer />
         </div>      
+        <div>
+          <LeftMenuContainer />
+        </div>
       </div>
     );
   }
