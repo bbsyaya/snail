@@ -1,8 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
+import changeTopMenu from '../actions/TopMenuAction';
 
 class TopMenuContainer extends Component {
+	selectTopMenu(menuName) {
+		const { dispatch } = this.props;
+		dispatch(changeTopMenu(menuName));
+	}
 
 	render() {
 		const { topmenu } = this.props;
@@ -11,11 +15,11 @@ class TopMenuContainer extends Component {
 
 		for (var item of topmenuData) {
 
-		  var route = {name:item['name']};
+		  var menuName = item["name"];
 
 		  topmenus.push(<a className="toolbar-item toolbar-genre" 
 		  	key={item['name']}
-		  	>{item['desc']}</a>);    
+		  	onClick={this.selectTopMenu(menuName)}>{item['desc']}</a>);    
 		}
 
        return (

@@ -3,17 +3,28 @@ import { connect } from 'react-redux';
 
 class LeftMenuContainer extends Component {
   render() {
+    const {topmenu} = this.props;
+
+    var topMenuData = topmenu.data;
+    var selectedTopMenuName = topmenu.selected;
+
+    var leftMenuData = null;
+    for (var item of topMenuData) {
+      if (item['name'] == selectedTopMenuName) {
+        leftMenuData = item['leftMenus']
+      }
+    }
+
+    var leftMenus = [];
+    for (var item of leftMenuData) {
+      leftMenus.push(<li><a>{item}</a></li>);
+    } 
+
     return (
       <div className="side">
         <nav className="dr-menu dr-menu-open">
           <ul>
-            <li><a href="#">Jason Quinn</a></li>
-            <li><a href="#">Videos</a></li>
-            <li><a href="#">Favorites</a></li>
-            <li><a href="#">Subscriptions</a></li>
-            <li><a href="#">Downloads</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Logout</a></li>
+            {leftMenus}
           </ul>
         </nav>
       </div>          
